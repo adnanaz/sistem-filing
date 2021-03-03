@@ -1,4 +1,4 @@
-<?php include('config/config.php');?>
+<?php include('/config/config.php');?>
 		
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Edit Data</font></center>
@@ -37,14 +37,14 @@
 			$sql = mysqli_query($koneksi, "UPDATE petugas SET kd_petugas ='$kd_petugas', nm_petugas='$nm_petugas', no_telp='$no_telp', bagian='$bagian' WHERE kd_petugas ='$kd_petugas'") or die(mysqli_error($koneksi));
 
 			if($sql){
-				echo '<script>alert("Berhasil menyimpan data."); document.location="index.php?page=tampil_petugas";</script>';
+				echo '<script>alert("Berhasil menyimpan data."); document.location="dashboard.php?page=tampil_petugas";</script>';
 			}else{
 				echo '<div class="alert alert-warning">Gagal melakukan proses edit data.</div>';
 			}
 		}
 		?>
 
-		<form action="index.php?page=edit_petugas&kd_petugas=<?php echo $kd_petugas; ?>" method="post">
+		<form action="dashboard.php?page=edit_petugas&kd_petugas=<?php echo $kd_petugas; ?>" method="post">
 			<div class="item form-group">
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Petugas </label>
 				<div class="col-md-6 col-sm-6">
@@ -73,7 +73,7 @@
 			<div class="item form-group">
 				<div class="col-md-6 col-sm-6 offset-md-3">
 					<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-					<a href="index.php?page=tampil_petugas" class="btn btn-warning">Kembali</a>
+					<a href="dashboard.php?page=tampil_petugas" class="btn btn-warning">Kembali</a>
 				</div>
 			</div>
 		</form>

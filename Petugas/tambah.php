@@ -1,4 +1,4 @@
-<?php include('config/config.php'); ?>
+<?php include('/config/config.php'); ?>
 
 		<center><font size="6">Tambah Data Petugas</font></center>
 		<hr>
@@ -17,7 +17,7 @@
 				$sql = mysqli_query($koneksi, "INSERT INTO petugas (kd_petugas, nm_petugas, no_telp, bagian) VALUES('$kd_petugas', '$nm_petugas', '$no_telp', '$bagian')") or die(mysqli_error($koneksi));
 
 				if($sql){
-					echo '<script>alert("Berhasil menambahkan data."); document.location="index.php?page=tampil_petugas";</script>';
+					echo '<script>alert("Berhasil menambahkan data."); document.location="dashboard.php?page=tampil_petugas";</script>';
 				}else{
 					echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
 				}
@@ -29,7 +29,7 @@
 
 	
 
-		<form action="index.php?page=tambah_petugas" method="post">
+		<form action="dashboard.php?page=tambah_petugas" method="post">
 			<div class="item form-group">
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Petugas</label>
 				<div class="col-md-6 col-sm-6 ">

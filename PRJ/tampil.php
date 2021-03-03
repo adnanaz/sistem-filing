@@ -1,13 +1,13 @@
 <?php
 //memasukkan file config.php
-include('config/config.php');
+include('/config/config.php');
 ?>
 
 
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Transaksi Pendaftaran Pasien Rawat Jalan</font></center>
 		<hr>
-		<a href="index.php?page=tambah_pasien_PRJ"><button class="btn btn-dark right">Tambah Data</button></a>
+		<a href="dashboard.php?page=tambah_pasien_PRJ"><button class="btn btn-dark right">Tambah Data</button></a>
 		<div class="table-responsive">
 		<table class="table table-striped jambo_table bulk_action">
 			<thead>
@@ -45,8 +45,8 @@ include('config/config.php');
 							<td>'.$data['alamat'].'</td>
 
 							<td>
-								<a href="index.php?page=edit_pasien_PRJ&no_rm='.$data['no_rm'].'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="index.php?page=delete_pasien_PRJ&no_rm='.$data['no_rm'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
+								<a href="dashboard.php?page=edit_pasien_PRJ&no_rm='.$data['no_rm'].'" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=delete_pasien_PRJ&no_rm='.$data['no_rm'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
 						';

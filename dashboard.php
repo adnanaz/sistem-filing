@@ -71,36 +71,36 @@ RS PKU AISYIYAH BOYOLALI </title>
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
+                  <li><a href="dashboard.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron"></span></a>
                   </li>
                   <li><a href="#"><i class="fa fa-desktop"></i> Data Pasien <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php?page=tampil_pasien">Tampil Data Pasien</a></li>
-                      <li><a href="index.php?page=tambah_pasien">Tambah Data Pasien</a></li>
+                      <li><a href="dashboard.php?page=tampil_pasien">Tampil Data Pasien</a></li>
+                      <li><a href="dashboard.php?page=tambah_pasien">Tambah Data Pasien</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Data Petugas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php?page=tampil_petugas">Tampil Data</a></li>
-                      <li><a href="index.php?page=tambah_petugas">Tambah Data</a></li>
+                      <li><a href="dashboard.php?page=tampil_petugas">Tampil Data</a></li>
+                      <li><a href="dashboard.php?page=tambah_petugas">Tambah Data</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Data Peminjam <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php?page=tampil_peminjam">Tampil Data Peminjam</a></li>
-                      <li><a href="index.php?page=tambah_peminjam">Tambah Data Peminjam</a></li>
+                      <li><a href="dashboard.php?page=tampil_peminjam">Tampil Data Peminjam</a></li>
+                      <li><a href="dashboard.php?page=tambah_peminjam">Tambah Data Peminjam</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Transaksi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php?page=tampil_pasien_PRJ">Transaksi Pendaftaran Pasien Rawat Jalan</a></li>
-                      <li><a href="index.php?page=tampil_peminjaman_DRM">Transaksi Peminjaman DRM</a></li>
+                      <li><a href="dashboard.php?page=tampil_pasien_PRJ">Transaksi Pendaftaran Pasien Rawat Jalan</a></li>
+                      <li><a href="dashboard.php?page=tampil_peminjaman_DRM">Transaksi Peminjaman DRM</a></li>
                       <li><a href="#">Transaksi Pengembalian</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Laporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Laporan Data Pasien</a></li>
+                      <li><a href="dashboard.php?page=cetak_data_pasien">Laporan Data Pasien</a></li>
                       <li><a href="#">Laporan Data Petugas</a></li>
                       <li><a href="#">Laporan Data Peminjam</a></li>
                       <li><a href="#">Laporan Data Pendaftaran Pasien</a></li>
@@ -173,11 +173,14 @@ RS PKU AISYIYAH BOYOLALI </title>
         <div class="right_col" role="main">
       <?php
       $queries = array();
+      // print_r('<pre>');
       parse_str($_SERVER['QUERY_STRING'], $queries);
       error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
       switch ($queries['page']) {
       	case 'tampil_pasien':
       		# code...
+          // include 'index.php';
+
       		include 'Pasien/tampil.php';
       		break;
       	case 'tambah_pasien':
@@ -285,10 +288,18 @@ RS PKU AISYIYAH BOYOLALI </title>
         include 'PeminjamanDRM/delete.php';
         break;
         // END Peminjaman DRM
+
+        // laporan
+        // cetak_data_pasien
+        case 'cetak_data_pasien':
+          # code...
+      include 'Laporan/lap.data.pasien.php';
+      break;
+        // end laporan
           default:
             #code...
-            include 'home.php';
-            break;
+        include 'home.php';
+        break;
         }
         ?>
         </div>

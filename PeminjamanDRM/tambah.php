@@ -1,4 +1,4 @@
-<?php include('config/config.php'); ?>
+<?php include('/config/config.php'); ?>
 
 		<center><font size="6">Tambah Data</font></center>
 		<hr>
@@ -23,7 +23,7 @@
 $sql = mysqli_query($koneksi, "INSERT INTO peminjaman (no_pinjam, tgl_pinjam, kd_petugas, tujuan_pinjam, lokasi_pinjam, tanggal_hrs_kmb, no_rm, nm_pasien, tgl_lahir) VALUES('$no_pinjam', '$tgl_pinjam', '$kd_petugas', '$tujuan_pinjam','$lokasi_pinjam','$tanggal_hrs_kmb','$no_rm','$nm_pasien','$tgl_lahir')") or die(mysqli_error($koneksi));
 
 				if($sql){
-					echo '<script>alert("Berhasil menambahkan data."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+					echo '<script>alert("Berhasil menambahkan data."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 				}else{
 					echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
 				}
@@ -35,7 +35,7 @@ $sql = mysqli_query($koneksi, "INSERT INTO peminjaman (no_pinjam, tgl_pinjam, kd
 
 	
 <!-- terakhir sampai siniiiiiihhhhhhhhhhhhh.. -->
-		<form action="index.php?page=tambah_peminjaman_DRM" method="post">
+		<form action="dashboard.php?page=tambah_peminjaman_DRM" method="post">
 			<div class="item form-group">
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Nomor Pinjam</label>
 				<div class="col-md-6 col-sm-6 ">

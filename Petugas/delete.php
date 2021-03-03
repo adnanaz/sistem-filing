@@ -1,6 +1,6 @@
 <?php
 //include file config.php
-include('config/config.php');
+include('/config/config.php');
 
 //jika benar mendapatkan GET id dari URL
 if(isset($_GET['kd_petugas'])){
@@ -15,15 +15,15 @@ if(isset($_GET['kd_petugas'])){
 		//query ke database DELETE untuk menghapus data dengan kondisi id=$id
 		$del = mysqli_query($koneksi, "DELETE FROM petugas WHERE kd_petugas='$kd_petugas'") or die(mysqli_error($koneksi));
 		if($del){
-			echo '<script>alert("Berhasil menghapus data."); document.location="index.php?page=tampil_petugas";</script>';
+			echo '<script>alert("Berhasil menghapus data."); document.location="dashboard.php?page=tampil_petugas";</script>';
 		}else{
-			echo '<script>alert("Gagal menghapus data."); document.location="index.php?page=tampil_petugas";</script>';
+			echo '<script>alert("Gagal menghapus data."); document.location="dashboard.php?page=tampil_petugas";</script>';
 		}
 	}else{
-		echo '<script>alert("kode petugas tidak ditemukan di database."); document.location="index.php?page=tampil_petugas";</script>';
+		echo '<script>alert("kode petugas tidak ditemukan di database."); document.location="dashboard.php?page=tampil_petugas";</script>';
 	}
 }else{
-	echo '<script>alert("kode petugas tidak ditemukan di database."); document.location="index.php?page=tampil_petugas";</script>';
+	echo '<script>alert("kode petugas tidak ditemukan di database."); document.location="dashboard.php?page=tampil_petugas";</script>';
 }
 
 ?>

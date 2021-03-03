@@ -1,6 +1,6 @@
 <?php
 //include file config.php
-include('config/config.php');
+include('/config/config.php');
 
 //jika benar mendapatkan GET id dari URL
 if(isset($_GET['no_pinjam'])){
@@ -15,15 +15,15 @@ if(isset($_GET['no_pinjam'])){
 		//query ke database DELETE untuk menghapus data dengan kondisi id=$id
 		$del = mysqli_query($koneksi, "DELETE FROM peminjaman WHERE no_pinjam='$no_pinjam'") or die(mysqli_error($koneksi));
 		if($del){
-			echo '<script>alert("Berhasil menghapus data."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+			echo '<script>alert("Berhasil menghapus data."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 		}else{
-			echo '<script>alert("Gagal menghapus data."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+			echo '<script>alert("Gagal menghapus data."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 		}
 	}else{
-		echo '<script>alert("Nomor pinjam tidak ditemukan di database."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+		echo '<script>alert("Nomor pinjam tidak ditemukan di database."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 	}
 }else{
-	echo '<script>alert("Nomor Pinjam tidak ditemukan di database."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+	echo '<script>alert("Nomor Pinjam tidak ditemukan di database."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 }
 
 ?>

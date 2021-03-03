@@ -1,4 +1,4 @@
-<?php include('config/config.php');?>
+<?php include('/config/config.php');?>
 		
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Edit Data</font></center>
@@ -38,14 +38,14 @@
 			$sql = mysqli_query($koneksi, "UPDATE peminjam SET kd_peminjam ='$kd_peminjam', nmpeminjam='$nmpeminjam',alamat='$alamat', no_telp='$no_telp', keterangan='$keterangan' WHERE kd_peminjam ='$kd_peminjam'") or die(mysqli_error($koneksi));
 
 			if($sql){
-				echo '<script>alert("Berhasil menyimpan data."); document.location="index.php?page=tampil_peminjam";</script>';
+				echo '<script>alert("Berhasil menyimpan data."); document.location="dashboard.php?page=tampil_peminjam";</script>';
 			}else{
 				echo '<div class="alert alert-warning">Gagal melakukan proses edit data.</div>';
 			}
 		}
 		?>
 
-		<form action="index.php?page=edit_peminjam&kd_peminjam=<?php echo $kd_peminjam; ?>" method="post">
+		<form action="dashboard.php?page=edit_peminjam&kd_peminjam=<?php echo $kd_peminjam; ?>" method="post">
 			<div class="item form-group">
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Peminjam </label>
 				<div class="col-md-6 col-sm-6">
@@ -80,7 +80,7 @@
 			<div class="item form-group">
 				<div class="col-md-6 col-sm-6 offset-md-3">
 					<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-					<a href="index.php?page=tampil_peminjam" class="btn btn-warning">Kembali</a>
+					<a href="dashboard.php?page=tampil_peminjam" class="btn btn-warning">Kembali</a>
 				</div>
 			</div>
 		</form>

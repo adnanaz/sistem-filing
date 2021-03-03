@@ -1,13 +1,13 @@
 <?php
 //memasukkan file config.php
-include('config/config.php');
+include('/config/config.php');
 ?>
 
 
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Data Petugas</font></center>
 		<hr>
-		<a href="index.php?page=tambah_peminjaman_DRM"><button class="btn btn-dark right">Tambah Data</button></a>
+		<a href="dashboard.php?page=tambah_peminjaman_DRM"><button class="btn btn-dark right">Tambah Data</button></a>
 		<div class="table-responsive">
 		<table class="table table-striped jambo_table bulk_action">
 			<thead>
@@ -52,8 +52,8 @@ include('config/config.php');
 							
 							
 							<td>
-								<a href="index.php?page=edit_peminjaman_DRM&no_pinjam='.$data['no_pinjam'].'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="index.php?page=delete_peminjaman_PRJ&no_pinjam='.$data['no_pinjam'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
+								<a href="dashboard.php?page=edit_peminjaman_DRM&no_pinjam='.$data['no_pinjam'].'" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=delete_peminjaman_PRJ&no_pinjam='.$data['no_pinjam'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
 						';

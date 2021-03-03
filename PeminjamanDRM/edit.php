@@ -1,4 +1,4 @@
-<?php include('config/config.php');?>
+<?php include('/config/config.php');?>
 		
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Edit Data</font></center>
@@ -43,14 +43,14 @@
 			$sql = mysqli_query($koneksi, "UPDATE peminjaman SET no_pinjam ='$no_pinjam', tgl_pinjam='$tgl_pinjam', kd_petugas='$kd_petugas', tujuan_pinjam='$tujuan_pinjam' , lokasi_pinjam='$lokasi_pinjam' , tanggal_hrs_kmb='$tanggal_hrs_kmb' , no_rm='$no_rm' , nm_pasien='$nm_pasien', tgl_lahir='$tgl_lahir' WHERE no_pinjam ='$no_pinjam'") or die(mysqli_error($koneksi));
 
 			if($sql){
-				echo '<script>alert("Berhasil menyimpan data."); document.location="index.php?page=tampil_peminjaman_DRM";</script>';
+				echo '<script>alert("Berhasil menyimpan data."); document.location="dashboard.php?page=tampil_peminjaman_DRM";</script>';
 			}else{
 				echo '<div class="alert alert-warning">Gagal melakukan proses edit data.</div>';
 			}
 		}
 		?>
 
-		<form action="index.php?page=edit_peminjaman_DRM&no_pinjam=<?php echo $no_pinjam; ?>" method="post">
+		<form action="dashboard.php?page=edit_peminjaman_DRM&no_pinjam=<?php echo $no_pinjam; ?>" method="post">
 			<!-- asdadad -->
 			<div class="item form-group">
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Nomor Pinjam</label>

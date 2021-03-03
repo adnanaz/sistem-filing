@@ -1,6 +1,6 @@
 <?php
 //include file config.php
-include('config/config.php');
+include('/config/config.php');
 
 //jika benar mendapatkan GET id dari URL
 if(isset($_GET['no_rm'])){
@@ -15,15 +15,15 @@ if(isset($_GET['no_rm'])){
 		//query ke database DELETE untuk menghapus data dengan kondisi id=$id
 		$del = mysqli_query($koneksi, "DELETE FROM pasien WHERE no_rm='$no_rm'") or die(mysqli_error($koneksi));
 		if($del){
-			echo '<script>alert("Berhasil menghapus data."); document.location="index.php?page=tampil_pasien";</script>';
+			echo '<script>alert("Berhasil menghapus data."); document.location="dashboard.php?page=tampil_pasien";</script>';
 		}else{
-			echo '<script>alert("Gagal menghapus data."); document.location="index.php?page=tampil_pasien";</script>';
+			echo '<script>alert("Gagal menghapus data."); document.location="dashboard.php?page=tampil_pasien";</script>';
 		}
 	}else{
-		echo '<script>alert("ID tidak ditemukan di database."); document.location="index.php?page=tampil_pasien";</script>';
+		echo '<script>alert("ID tidak ditemukan di database."); document.location="dashboard.php?page=tampil_pasien";</script>';
 	}
 }else{
-	echo '<script>alert("ID tidak ditemukan di database."); document.location="index.php?page=tampil_pasien";</script>';
+	echo '<script>alert("ID tidak ditemukan di database."); document.location="dashboard.php?page=tampil_pasien";</script>';
 }
 
 ?>

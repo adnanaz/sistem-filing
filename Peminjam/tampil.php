@@ -1,28 +1,13 @@
 <?php
-//memasukkan file config.php
-	// CREATE TABLE Peminjaman (
-	// no_pinjam varchar(5) PRIMARY,
-    // tgl_pinjam datetime,
-    // kd_petugas varchar (5),
-    //  FOREIGN KEY (kd_petugas) REFERENCES petugas(kd_petugas),
-    // tujuan_pinjam varchar (255),
-    // lokasi_pinjam varchar (255),
-    // tanggal_hrs_kmb datetime,
-    // no_rm varchar (5),
-    // FOREIGN KEY (no_rm) REFERENCES pasien(no_rm),
-    // nm_pasien varchar(255),
-    //  FOREIGN KEY (nm_pasien) REFERENCES pasien(nm_pasien),
-    // tgl_lahir datetime,
-    // FOREIGN KEY (tgl_lahir) REFERENCES pasien(tgl_lahir)
-    //     );
-include('config/config.php');
+
+include('/config/config.php');
 ?>
 
 
 	<div class="container" style="margin-top:20px">
 		<center><font size="6">Data Peminjam</font></center>
 		<hr>
-		<a href="index.php?page=tambah_peminjam"><button class="btn btn-dark right">Tambah Data</button></a>
+		<a href="dashboard.php?page=tambah_peminjam"><button class="btn btn-dark right">Tambah Data</button></a>
 		<div class="table-responsive">
 		<table class="table table-striped jambo_table bulk_action">
 			<thead>
@@ -55,8 +40,8 @@ include('config/config.php');
 							<td>'.$data['no_telp'].'</td>
 							<td>'.$data['keterangan'].'</td>
 							<td>
-								<a href="index.php?page=edit_peminjam&kd_peminjam='.$data['kd_peminjam'].'" class="btn btn-secondary btn-sm">Edit</a>
-								<a href="index.php?page=delete_peminjam&kd_peminjam='.$data['kd_peminjam'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
+								<a href="dashboard.php?page=edit_peminjam&kd_peminjam='.$data['kd_peminjam'].'" class="btn btn-secondary btn-sm">Edit</a>
+								<a href="dashboard.php?page=delete_peminjam&kd_peminjam='.$data['kd_peminjam'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
 						';
