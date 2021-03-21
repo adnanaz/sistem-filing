@@ -22,6 +22,9 @@ while($row = $result->fetch_object()){
   $pekerjaan = $row->pekerjaan;
   $no_telp = $row->no_telp;
   $alamat = $row->alamat;
+
+  $pdf->SetFillColor(24,224,23);
+  $pdf->SetFont('Arial', 'B',10);
   $pdf->Cell(20,10,$no_rm,1);
   $pdf->Cell(40,10,$nm_pasien,1);
   $pdf->Cell(80,10,$tmp_lahir,1);
